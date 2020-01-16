@@ -24,7 +24,17 @@
       let socket = io();
 
       let form = document.querySelector('form');
-      
+
+      form.addEventListener('submit', ((e)=> {
+        // body...
+        e.preventDefault();
+        const chatbox= document.getElementById('m');
+        socket.emit('chat msg', chatbox.value);
+        console.log('test')
+        chatbox.value ='';
+        return false;
+      }));
+
 
     </script>
   </body>
