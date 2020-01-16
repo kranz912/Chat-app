@@ -35,6 +35,10 @@
         return false;
       }));
 
+      socket.on('chat msg', (msg)=>{
+        const li=  document.createElement('li');
+        document.getElementById('messages').append(msg,li);
+      });
 
     </script>
   </body>
